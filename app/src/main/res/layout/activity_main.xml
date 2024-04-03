@@ -32,7 +32,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/parrafo1"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="VisualLintBounds" />
 
     <Button
         android:id="@+id/botonRandom"
@@ -40,7 +41,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
         android:background="#E80F0F"
-        android:onClick="buttonClick"
         android:text="@string/botonrandom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

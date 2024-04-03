@@ -1,12 +1,10 @@
 package com.example.miprimerproyecto
 
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import java.util.Random
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,15 +26,17 @@ class MainActivity : AppCompatActivity() {
 
         botonRandom.setOnClickListener {
             val numeroAleatorio = (1..3).random()
-            if(numeroAleatorio==1){
-                parrafo1.text = obtenerPalabras().toString()
-            }
-            else if (numeroAleatorio==2){
-                parrafo2.text = obtenerPalabras().toString()
-            }
-            else{
-                parrafo1.text = obtenerPalabras().toString()
-                parrafo2.text = obtenerPalabras().toString()
+            when (numeroAleatorio) {
+                1 -> {
+                    parrafo1.text = obtenerPalabras()
+                }
+                2 -> {
+                    parrafo2.text = obtenerPalabras()
+                }
+                else -> {
+                    parrafo1.text = obtenerPalabras()
+                    parrafo2.text = obtenerPalabras()
+                }
             }
 
 
@@ -44,22 +44,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun obtenerPalabras(): String {
-        val palabrasAleatorias = List(100) { palabras.random() } // Generar 20 palabras aleatorias
-        return palabrasAleatorias.joinToString(separator = " ") // Unir las palabras con un espacio entre cada una
+        val palabrasAleatorias = List(100) { palabras.random() }
+        return palabrasAleatorias.joinToString(separator = " ")
     }
-//Preguntar por que tengo que hacer este metodo aparte
     private fun configurarAutoSizeText(textView: TextView) {
         textView.setAutoSizeTextTypeUniformWithConfiguration(
-            8, // Tamaño mínimo en sp
-            24, // Tamaño máximo en sp
-            1, // Incremento en sp
+            8,
+            24,
+            1,
             TextView.AUTO_SIZE_TEXT_TYPE_UNIFORM
         )
     }
 }
-
-//
-//ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//insets
