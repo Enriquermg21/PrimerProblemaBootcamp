@@ -40,7 +40,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
         android:background="#E80F0F"
-        android:backgroundTint="#B10F0F"
         android:onClick="buttonClick"
         android:text="@string/botonrandom"
         app:layout_constraintBottom_toBottomOf="parent"
